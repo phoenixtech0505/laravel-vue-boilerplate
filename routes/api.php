@@ -10,6 +10,7 @@ Route::group([], function ($route) {
     Route::match(['put', 'patch'], 'locale', [LangController::class, 'update']);
 });
 
+// Sanctum authentication middleware
 Route::middleware('auth:sanctum')->group(function ($route) {
     $route->get('/me', [UserController::class, 'me']);
 });
